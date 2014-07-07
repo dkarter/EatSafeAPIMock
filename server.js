@@ -1,0 +1,45 @@
+var express = require('express');
+var app = express();
+var bodyParser = require('body-parser');
+
+//let us get data from post
+app.use(bodyParser());
+
+var port = process.env.PORT || 8080;
+
+var router = express.Router();
+
+router.get('/near', function (req, res) {
+	res.json([{"rating":"B","dist":"0.11","name":"Da Lobsta","address":"12 E Cedar St","new":false,"pic":"http://media2.fl.yelpcdn.com/bpthumb/DY0j0ILnUgxib_e1Nqbn4Q/ms","id":"ChIJA2ChzVHTD4gRPSWx89UMbOs","yelp_rating":"3.5"},{"rating":"B","dist":"0.12","name":"Big Bowl","address":"6 E Cedar St","new":false,"pic":"http://media3.fl.yelpcdn.com/bpthumb/QXmiGt4NfqvaktvHDup2Nw/ms","id":"ChIJoxTp01HTD4gRsGyiMnfO_E4","yelp_rating":"3.5"},{"rating":"B","dist":"0.12","name":"Bistrot Zinc","address":"1131 N State St","new":false,"pic":"http://media3.fl.yelpcdn.com/bpthumb/l7kVLHKUyQ1vJxwI6cVvBQ/ms","id":"ChIJMakiK1DTD4gRSPUE8l8S76A","yelp_rating":"4.0"},{"rating":"A","dist":"0.12","name":"Corner Bakery Cafe - State & Cedar","address":"1121 N State St","new":false,"pic":"http://media2.fl.yelpcdn.com/bpthumb/6BK2iSeiYe-C5eyVbU5nyQ/ms","id":"ChIJIfmF01HTD4gRnrLsK78UODM","yelp_rating":"3.5"},{"rating":"B","dist":"0.12","name":"Carmine's","address":"1043 N Rush St","new":false,"pic":"http://media1.fl.yelpcdn.com/bpthumb/CrhdhLdeaE-ux8I29dOidg/ms","id":"ChIJazmh0FHTD4gRtbe0su4NLxE","yelp_rating":"3.5"},{"rating":"A","dist":"0.13","name":"RA Sushi Bar Restaurant","address":"1139 N State St","new":false,"pic":"http://media2.fl.yelpcdn.com/bpthumb/OA0FsUxx48YfwFFLoJ66jw/ms","id":"ChIJz5fwKVDTD4gRUeV33pnRW_Y","yelp_rating":"3.5"},{"rating":"A","dist":"0.13","name":"The Original Pancake House","address":"22 E BELLEVUE PL ","new":false,"pic":"","id":"ChIJERfUwFHTD4gRTr5OE34ncp8","yelp_rating":""},{"rating":"B","dist":"0.13","name":"Luxbar","address":"18 E Bellevue Pl","new":false,"pic":"http://media1.fl.yelpcdn.com/bpthumb/Km7oezg18t0EI0-HSy0kyQ/ms","id":"ChIJrTfew1HTD4gRX-yR9FosV9E","yelp_rating":"3.5"},{"rating":"C","dist":"0.14","name":"Tavern On Rush","address":"1031 N Rush St","new":false,"pic":"http://media1.fl.yelpcdn.com/bpthumb/__N2HEgk8YGF_HbrdkhjaA/ms","id":"ChIJyVWv3FHTD4gRBd-dDwlsr7Y","yelp_rating":"3.5"},{"rating":"B","dist":"0.14","name":"CVS Pharmacy | Photo","address":"1201 N STATE PKWY ","new":false,"pic":"","id":"ChIJ546PDk_TD4gRJl6Ohzf_qhQ","yelp_rating":""},{"rating":"A","dist":"0.15","name":"Barnes & Noble","address":"1130 N STATE ST ","new":true,"pic":"","id":"ChIJRwvd1E_TD4gRPydwVLst8rc","yelp_rating":""},{"rating":"A","dist":"0.15","name":"SUBWAYÂ® Restaurants","address":"46 E Chicago Ave","new":false,"pic":"http://media1.fl.yelpcdn.com/bpthumb/lD2oL6OZCXNdOb4NuoUl7Q/ms","id":"ChIJ2QDgKU7TD4gR1DgXxTAqIQc","yelp_rating":"3.5"},{"rating":"A","dist":"0.15","name":"TeaGschwendner","address":"1160 N State St","new":true,"pic":"http://media4.fl.yelpcdn.com/bpthumb/BsKUhU22rxFDJuKGler38w/ms","id":"ChIJHVCo3k_TD4gRoJrJghM4seQ","yelp_rating":"4.5"},{"rating":"A","dist":"0.15","name":"Chipotle Mexican Grill","address":"1166 N State St","new":false,"pic":"http://media2.fl.yelpcdn.com/bpthumb/_bs5tO91eMiTDgvEzI8lew/ms","id":"ChIJ6eEd2U_TD4gRLHs5zvpKfQI","yelp_rating":"4.0"},{"rating":"B","dist":"0.15","name":"Cedar Hotel","address":"1112 N State St","new":false,"pic":"http://media4.fl.yelpcdn.com/bpthumb/e-lOaOefRXf1ys68sgv3Cw/ms","id":"ChIJJUMOKk7TD4gRawQkwlfQ9ig","yelp_rating":"2.5"},{"rating":"B","dist":"0.16","name":"Lou Malnati's Pizzeria - Gold Coast","address":"1120 N State St","new":false,"pic":"http://media1.fl.yelpcdn.com/bpthumb/1xYFD7pofR5dbsy0E0Tykg/ms","id":"ChIJU_XAKk7TD4gRmLD590uUQEY","yelp_rating":"4.0"},{"rating":"B","dist":"0.16","name":"Del Frisco's Double Eagle Steakhouse","address":"58 E Oak St","new":false,"pic":"http://media2.fl.yelpcdn.com/bpthumb/TfWZgY-ep4Own7ttFVtVCQ/ms","id":"ChIJnQicnVHTD4gRv3jgeLzdUaA","yelp_rating":"4.0"},{"rating":"B","dist":"0.16","name":"Yogurtland","address":"1 W DIVISION ST ","new":false,"pic":"","id":"ChIJsf_Q3U_TD4gRLa96t65M5NI","yelp_rating":""},{"rating":"F","dist":"0.16","name":"TwelveWest","address":"12 W ELM ST ","new":false,"pic":"","id":"ChIJzxMV0E_TD4gRHUjhsXuKjMw","yelp_rating":""},{"rating":"C","dist":"0.16","name":"Jellyfish","address":"1009 N Rush St","new":false,"pic":"http://media1.fl.yelpcdn.com/bpthumb/12S4cyAEww2D3kfFv0_9Nw/ms","id":"ChIJl53561HTD4gRutEw54c9keE","yelp_rating":"3.5"}]);
+});
+
+router.get('/instant', function (req, res) {
+	res.json([{"rating":"B","dist":"0.11","name":"Da Lobsta","address":"12 E Cedar St","new":false,"pic":"http://media2.fl.yelpcdn.com/bpthumb/DY0j0ILnUgxib_e1Nqbn4Q/ms","id":"ChIJA2ChzVHTD4gRPSWx89UMbOs","yelp_rating":"3.5"},{"rating":"B","dist":"0.12","name":"Big Bowl","address":"6 E Cedar St","new":false,"pic":"http://media3.fl.yelpcdn.com/bpthumb/QXmiGt4NfqvaktvHDup2Nw/ms","id":"ChIJoxTp01HTD4gRsGyiMnfO_E4","yelp_rating":"3.5"},{"rating":"B","dist":"0.12","name":"Bistrot Zinc","address":"1131 N State St","new":false,"pic":"http://media3.fl.yelpcdn.com/bpthumb/l7kVLHKUyQ1vJxwI6cVvBQ/ms","id":"ChIJMakiK1DTD4gRSPUE8l8S76A","yelp_rating":"4.0"},{"rating":"A","dist":"0.12","name":"Corner Bakery Cafe - State & Cedar","address":"1121 N State St","new":false,"pic":"http://media2.fl.yelpcdn.com/bpthumb/6BK2iSeiYe-C5eyVbU5nyQ/ms","id":"ChIJIfmF01HTD4gRnrLsK78UODM","yelp_rating":"3.5"},{"rating":"B","dist":"0.12","name":"Carmine's","address":"1043 N Rush St","new":false,"pic":"http://media1.fl.yelpcdn.com/bpthumb/CrhdhLdeaE-ux8I29dOidg/ms","id":"ChIJazmh0FHTD4gRtbe0su4NLxE","yelp_rating":"3.5"},{"rating":"A","dist":"0.13","name":"RA Sushi Bar Restaurant","address":"1139 N State St","new":false,"pic":"http://media2.fl.yelpcdn.com/bpthumb/OA0FsUxx48YfwFFLoJ66jw/ms","id":"ChIJz5fwKVDTD4gRUeV33pnRW_Y","yelp_rating":"3.5"},{"rating":"A","dist":"0.13","name":"The Original Pancake House","address":"22 E BELLEVUE PL ","new":false,"pic":"","id":"ChIJERfUwFHTD4gRTr5OE34ncp8","yelp_rating":""},{"rating":"B","dist":"0.13","name":"Luxbar","address":"18 E Bellevue Pl","new":false,"pic":"http://media1.fl.yelpcdn.com/bpthumb/Km7oezg18t0EI0-HSy0kyQ/ms","id":"ChIJrTfew1HTD4gRX-yR9FosV9E","yelp_rating":"3.5"},{"rating":"C","dist":"0.14","name":"Tavern On Rush","address":"1031 N Rush St","new":false,"pic":"http://media1.fl.yelpcdn.com/bpthumb/__N2HEgk8YGF_HbrdkhjaA/ms","id":"ChIJyVWv3FHTD4gRBd-dDwlsr7Y","yelp_rating":"3.5"},{"rating":"B","dist":"0.14","name":"CVS Pharmacy | Photo","address":"1201 N STATE PKWY ","new":false,"pic":"","id":"ChIJ546PDk_TD4gRJl6Ohzf_qhQ","yelp_rating":""},{"rating":"A","dist":"0.15","name":"Barnes & Noble","address":"1130 N STATE ST ","new":true,"pic":"","id":"ChIJRwvd1E_TD4gRPydwVLst8rc","yelp_rating":""},{"rating":"A","dist":"0.15","name":"SUBWAYÂ® Restaurants","address":"46 E Chicago Ave","new":false,"pic":"http://media1.fl.yelpcdn.com/bpthumb/lD2oL6OZCXNdOb4NuoUl7Q/ms","id":"ChIJ2QDgKU7TD4gR1DgXxTAqIQc","yelp_rating":"3.5"},{"rating":"A","dist":"0.15","name":"TeaGschwendner","address":"1160 N State St","new":true,"pic":"http://media4.fl.yelpcdn.com/bpthumb/BsKUhU22rxFDJuKGler38w/ms","id":"ChIJHVCo3k_TD4gRoJrJghM4seQ","yelp_rating":"4.5"},{"rating":"A","dist":"0.15","name":"Chipotle Mexican Grill","address":"1166 N State St","new":false,"pic":"http://media2.fl.yelpcdn.com/bpthumb/_bs5tO91eMiTDgvEzI8lew/ms","id":"ChIJ6eEd2U_TD4gRLHs5zvpKfQI","yelp_rating":"4.0"},{"rating":"B","dist":"0.15","name":"Cedar Hotel","address":"1112 N State St","new":false,"pic":"http://media4.fl.yelpcdn.com/bpthumb/e-lOaOefRXf1ys68sgv3Cw/ms","id":"ChIJJUMOKk7TD4gRawQkwlfQ9ig","yelp_rating":"2.5"},{"rating":"B","dist":"0.16","name":"Lou Malnati's Pizzeria - Gold Coast","address":"1120 N State St","new":false,"pic":"http://media1.fl.yelpcdn.com/bpthumb/1xYFD7pofR5dbsy0E0Tykg/ms","id":"ChIJU_XAKk7TD4gRmLD590uUQEY","yelp_rating":"4.0"},{"rating":"B","dist":"0.16","name":"Del Frisco's Double Eagle Steakhouse","address":"58 E Oak St","new":false,"pic":"http://media2.fl.yelpcdn.com/bpthumb/TfWZgY-ep4Own7ttFVtVCQ/ms","id":"ChIJnQicnVHTD4gRv3jgeLzdUaA","yelp_rating":"4.0"},{"rating":"B","dist":"0.16","name":"Yogurtland","address":"1 W DIVISION ST ","new":false,"pic":"","id":"ChIJsf_Q3U_TD4gRLa96t65M5NI","yelp_rating":""},{"rating":"F","dist":"0.16","name":"TwelveWest","address":"12 W ELM ST ","new":false,"pic":"","id":"ChIJzxMV0E_TD4gRHUjhsXuKjMw","yelp_rating":""},{"rating":"C","dist":"0.16","name":"Jellyfish","address":"1009 N Rush St","new":false,"pic":"http://media1.fl.yelpcdn.com/bpthumb/12S4cyAEww2D3kfFv0_9Nw/ms","id":"ChIJl53561HTD4gRutEw54c9keE","yelp_rating":"3.5"}]);
+});
+
+
+router.get('/place', function (req, res) {
+	res.json({
+		"name": "Da Lobsta",
+		"id": "ChIJA2ChzVHTD4gRPSWx89UMbOs",
+		"address":"12 E Cedar St",
+		"address2": "Chicago, IL 60661",
+		"rating": "B",
+		"new": false,
+		"yelp_rating":"3.5",
+		"dist": 0.11,
+		"pic":"http://media2.fl.yelpcdn.com/bpthumb/DY0j0ILnUgxib_e1Nqbn4Q/ms",
+		"complaints": 10,
+		"failures": 5,
+		"count": 20,
+		"lat": 41.888477,
+		"long": -87.635332 
+	});
+});
+
+
+
+app.use('/', router);
+
+app.listen(port);
+console.log('Listening on port ' + port);
